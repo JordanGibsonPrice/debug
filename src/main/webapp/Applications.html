@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TRMS</title>
+<script src="resources/main.js"></script>
+<script src="resources/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="Register.css"/>
+<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<title>Registration</title>
+</head>
+<body>
+	<ul class='nav'>
+            <li><a href='index.html'>Home</a></li>
+            <li><a class='active'>Apply for Tuition Reimbursement</a></li>
+			<li><a href='#'>???</a></li>
+			<li><a href='UserLogin.html'>Log Out</a></li>
+		</ul>
+<form action="Register()" formmethod="post"><!-- Once you are done with things check to see where you should be putting this href -->
+  <div class="container">
+  	<label><b>Employee ID</b></label>
+  	<input type="number" placeholder="Employee Id" max="100" formenctype="multipart/form-data" required>
+  	<label><b>Account Number/b></label>
+  	<input type="number" placeholder="Account Number" max="100" formenctype="multipart/form-data" required>
+  	<label><b>Department Number</b></label>
+  	<input type="number" placeholder="Department number" min="1" max="5" formenctype="multipart/form-data" required>
+    <label><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="registration" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" formenctype="multipart/form-data" required>
+    <label><b>First Name</b></label>
+    <input type="text" placeholder="First Name" name="registration" formenctype="multipart/form-data" required>
+    <label><b>Last Name</b></label>
+    <input type="text" placeholder="Last Name" name="registration" formenctype="multipart/form-data" required>
+    <input list="reimburseType">
+		<datalist id="reimburseType">
+  			<option value="University Courses">
+  			<option value="Seminars">
+  			<option value="Certifcation Prep Class">
+  			<option value="Certification">
+  			<option value="Technical Training">
+  			<option value="Other">
+		</datalist>
+	Select image(s) to help your case: <input type="file" name="registration" multiple accept="file_extension|audio/*|video/*|image/*|media_type" action="Upload()" required>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+    		<button type="submit" class="signupbtn" onclick="location.href='RegisterApplication'" >Sign Up</button><!-- submit the form -->
+      	<button type="button"  class="cancelbtn" href="index.html">Cancel</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>

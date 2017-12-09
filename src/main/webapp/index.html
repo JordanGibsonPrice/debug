@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TRMS</title>
+<script src="resources/main.js"></script>
+<script src="resources/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="main.css"/>
+<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<!--<div class="container">
+	  <div id="myDiv">TRMS</div>
+	  <div class="wrapper">
+	    <div class="column">
+	      <div class="item"></div>
+	    </div>
+	    <div class="column">
+	      <div class="item"></div>
+	      <div class="item"></div>
+	    </div>
+	    <div class="column">
+	      <div class="item"></div>
+	      <div class="item"></div>
+	      <div class="item"></div>
+	    </div>
+	  </div>
+	</div>-->
+	<ul class='nav'>
+            <li><a class='active'>Apply for Tuition Reimbursement</a></li>
+            <li><a href='Applications.html'>Create an Account</a></li>
+			<li><a href='#'>???</a></li>
+			<li><a href='UserLogin.html'>Log Out</a></li>
+		</ul>
+	<h1>Apply here</h1>
+	<form method="post" action="RegisterUser()" name="registration" onsubmit="return validateRegistration()">
+		<b><p id="error" style="color:red"></p></b>
+		<ul style="list-style-type: none">
+			<li>Employee Id</li>
+			<li><input type="number" name="empID" required></li>
+			<li>Application Id</li>
+			<li><input type="number" name="appID" required></li>
+			<li>First name</li>
+			<li><input type="text" name="empFirst" required></li>
+			<li>Last name</li>
+			<li><input type="email" name="empLast" required></li>
+			<li>Location</li>
+			<li><input type="text" name="locus" required></li>
+			<li>
+				<div class="container">
+      				<form>
+        					<div class="form-group">
+          					<textarea class="form-control status-box" rows="5" placeholder="Describe the training you'll be undertaking. Conclude with the time off needed for this training."></textarea>
+        					</div>
+      				</form>
+     			 <div class="button-group pull-right">
+        				<p class="counter">50</p>
+        				<a href="#" class="btn btn-primary">Post</a>
+        			</div>
+        			<input type="text" name="descrition" maxLength="50" required>
+        		</li>
+			<li>Amount of Reimbursement applied for:</li>
+			<li><input type="number" name="expense" required></li> O N E V E N T H A V E A J A X F U N C T I O N C A L L 
+			<li>Enter grade received for presentation (might take this field out)</li>
+			<li><input type="number" name="grading" required></li> O N E V E N T H A V E A J A X F U N C T I O N C A L L
+			<li>Talk about why training is necessary.</li>
+			<li>
+				<div class="container">
+      				<form>
+        					<div class="form-group">
+          					<textarea class="form-control status-box" rows="25" placeholder="Talk about why training is necessary."></textarea>
+        					</div>
+      				</form>
+     			 <div class="button-group pull-right">
+        				<p class="counter">2500</p>
+        				<a href="#" class="btn btn-primary">Post</a> O N C L I C K H A V E A J A X F U N C T I O N C A L L 
+        			</div>
+        			<input type="text" name="descrition" maxLength="2500" required>
+        		</li>
+			<li><input type="reset" value="reset"></li>
+			<li><input type="submit" value="submit"></li> O N C L I C K H A V E A J A X F U N C T I O N C A L L 
+		</ul>
+	</form>
+	<hr>
+	<h3>AJAX</h3>
+	<input type="text" id="input" placeholder="Input Application ID">
+	<input type=button onclick="sendAJAX()" value="SUBMIT">
+	<div>
+		<table border="2px" id=results>
+			<tr><th>USERNAME</th><th>FIRST NAME</th><th>MIDDLE NAME</th><th>LAST NAME</th></tr>
+		</table>
+		<p id=AJAXError></p>
+	</div>
+	<script>	var main = function() {
+		  $('.btn').click(function() {
+			    var post = $('.status-box').val();
+			    $('<li>').text(post).prependTo('.posts');
+			    $('.status-box').val('');
+			    $('.counter').text('2500');
+			    $('.btn').addClass('disabled'); 
+			  });
+			  
+			  $('.status-box').keyup(function() {
+			    var postLength = $(this).val().length;
+			    var charactersLeft = 2500 - postLength;
+			    $('.counter').text(charactersLeft);
+			  
+			    if(charactersLeft < 0) {
+			      $('.btn').addClass('disabled'); 
+			    }
+			    else if(charactersLeft == 300) {
+			      $('.btn').addClass('disabled');
+			    }
+			    else {
+			      $('.btn').removeClass('disabled');
+			    }
+			  });}</script>
+</body>
+</html>

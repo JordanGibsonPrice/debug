@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="ajax.js"></script>
+<meta charset="UTF-8">
+<title>Password Reset</title>
+</head>
+<body>
+<p>Enter in UserID</p>
+<input type="number" name="pwd-reset">
+<p>Change the value of the password field, and then click the button below.</p>
+
+Password: <input type="password" id="myPsw" value="">
+
+<p>Note that the default value is not affected when you change the value of the password field.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+    
+<p id="demo"></p>
+
+<button href="UserLogin.html">Back</button>
+
+<script>
+function myFunction() {
+	var xhttp = new XMLHttpRequest();
+    var x = document.getElementById("myPsw");
+    var defaultVal = x.defaultValue;
+    var currentVal = x.value;
+    
+    if (defaultVal == currentVal) {
+        document.getElementById("demo").innerHTML = "Default value and current value is the same: "
+        + x.defaultValue + " and " + x.value
+        + "<br>Change the value of the password field to see the difference!";
+    } else {
+        document.getElementById("demo").innerHTML = "The default value was: " + defaultVal
+        + "<br>The new, current value is: " + currentVal;
+    }
+}
+</script>
+</body>
+</html>
